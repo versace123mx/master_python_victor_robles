@@ -6,6 +6,7 @@ class Page(models.Model): #heredamos de models para poder crear los modelos
     title = models.CharField(max_length=50,verbose_name="Titulo") # el verbose_name="Titulo" es para la configuracion del administrador
     content = RichTextField(verbose_name="Contenido")
     slug = models.CharField(unique=True,max_length=50,verbose_name="URL amigable")
+    order = models.IntegerField(default=0,verbose_name="Orden")
     visible = models.BooleanField(verbose_name="Visible")
     create_at = models.DateTimeField(auto_now_add=True,verbose_name="Creado el")
     update_at = models.DateTimeField(auto_now=True,verbose_name="Actualizado el") #Este tipo de campo auto_now es para que cuando se realice una actualizacion este se el que se modifique
