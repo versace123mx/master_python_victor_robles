@@ -1,0 +1,66 @@
+Crear entorno virtual
+virtualenv  nombre_de_tu_entorno
+
+Activar entorno
+nombre_de_tu_entorno\Scripts\activate
+
+Nota: una vez creado el entorno ya se puede trabajar con las instalaciones de mysql y django asi como crear el proyecto, no se requiere estar dentro de la carpeta del entorno creado.
+
+Salir del entorno
+deactivate
+
+Instalar Django
+pip install Django==3.0.5  
+
+Instalar MySQL
+pip install mysqlclient  
+
+Crear un proyecto
+django-admin startproject ejemplo_1
+
+Arrancar el servidor de Django
+Nos solocamos sobre la carpeta de ejemplo_1 y ahi hay dos archivos una carpeta con el nombre ejemplo_1 que contiene todos los archivos a utilizar y configuracion y al nivel de esta esta un manage.py
+python manage.py runserver
+https://developer.mozilla.org/es/docs/Learn/Server-side/Django/development_environment
+
+Levantar el servidor desde una ip local
+python manage.py runserver 192.168.1.94:8000
+
+
+Crear una aplicacion.
+Sobre el mismo directorio dentro de ejemplo_1 que esta el archivo manager.py
+django-admin startapp home
+
+
+Nota: En Django se inicia el proyecto, pero dentro de cada proyecto se tienen aplicaciones, que es modelo de desacoplamiento de django, y el conjunto de estas app hacen un proyecto
+
+{%block tituloHome}{%endblock%}
+{%block manzana%}{%endblock%}
+at = en/de/a la
+
+
+Para ejecutar las migraciones que tiene python python manage.py migrate 
+
+Nota cuando nosotros creamos migraciones en el archivo models de nuestra aplicacion y queremos ejecutarlas devemos primero informale a python que tenemos nuevas migraciones y luego ya se ejecutan.
+1) python manage.py makemigrations
+2) python manage.py migrate
+
+
+
+Para crear el super usuario estar dentro del proyecto en este caso ejemplo_1
+python manage.py createsuperuser
+
+
+un modulo se pueden tener clases u metodos y se accede llamando a la carpeta y al nombre del metodo
+import miclase
+o 
+from miclase import nombreClase o nombreMetodo
+
+un paquete es un conjunto de modulos.
+
+
+
+
+Equivalencias
+MVT = Modelo Vista  Controlador
+MVT = Modelo Templa Vista

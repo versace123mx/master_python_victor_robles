@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{%block title%}
+Muestra todos los articulos
+{%endblock%}
+
+{%block titular%}
+<b>Muestra todos los articulos</b>
+{%endblock%}
+
+{% block content %}
+<b><p>Vanessita Culoncita te quiero oler el peyoyo!!</p></b>
+    {% if messages %}
+        {%for message in messages%}
+        <div class="alert alert-warning" role="alert">
+            {{message}}
+        </div>
+        {% endfor%}
+    {% endif %}
+    {% for articulo in articulos%}
+    <ul>
+        <li>ID: <b>{{ articulo.id }}</b></li>
+        <li>Content: <b>{{ articulo.content }}</b></li>
+        <li>Public: <b>{{ articulo.public }}</b></li>
+        <li>Create_at: <b>{{ articulo.create_at }}</b></li>
+        <li>Update_at: <b>{{ articulo.update_at }}</b></li>
+        <li>Image: <b>{{ articulo.image }}</b></li>
+        <li>Title: <b>{{ articulo.title }}</b></li>
+        {% if articulo.image != 'null' and articulo.image.url|length >= 1%}
+        <li><img src='{{articulo.image.url}}' width="100"></li>
+        {%endif%}
+        <li><a href="{%url 'eliminaArticulo' articulo.id %}" class="btn btn-dark">Eliminar</a> </li>
+    </ul>
+    {%endfor%}
+{%endblock%}

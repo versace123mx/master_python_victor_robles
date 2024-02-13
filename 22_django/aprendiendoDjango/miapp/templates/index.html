@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{%block title%}
+Index
+{%endblock%}
+
+{%block titular%}
+<b>Estamos en pagina de Inicio o Index</b>
+{%endblock%}
+
+{%block content%}
+<h1>Inicio {{2024}}</h1>
+<p>Años hast el 2050</p>
+{% comment "esti es un comentario Django" %}
+aqui va el comentario de la plantilla de django
+{% endcomment %}
+
+{% for i in range%}
+<ul>
+    <li>{{ i }}</li>
+</ul>
+{%endfor%}
+{%endblock%}
