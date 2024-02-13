@@ -64,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'pages.context_processors.get_pages', #esta linea es muy importante para hacer que el template pages este disponible desde cualquier parte de la app, de lo contrario no funcionara
             ],
         },
     },

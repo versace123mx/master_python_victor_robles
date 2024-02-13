@@ -20,6 +20,11 @@
                     <li class="nav-item mx-2">
                         <a href="{% url 'about' %}" class="btn btn-success btn-sm" role="button">Sobre Nosotros</a>
                     </li>
+                    {% for page in pages %}
+                        <li class="nav-item mx-2">
+                            <a href="{% url 'pagina' page.2 %}" class="btn btn-success btn-sm" role="button">{{page.1}}</a>
+                        </li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
