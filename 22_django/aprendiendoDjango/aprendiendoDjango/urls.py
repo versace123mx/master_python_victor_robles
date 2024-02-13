@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from miapp import views
+from miapp import views # tenemos que importar de aqui por que aqui esta la aplicacion views
 from django.conf import settings
 
 urlpatterns = [
