@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'mainapp',
-    'pages.apps.PagesConfig'
+    'pages.apps.PagesConfig',#el nombre es pages, pero en el admin.py de pages hay una clase de ahi obtenemos en nombre PagesConfig, por lo que veo esto es para el ckeditor
+    'blog.apps.BlogConfig',#el nombre es blog, pero en el admin.py de blog hay una clase de ahi obtenemos en nombre BlogConfig
 ]
 
 MIDDLEWARE = [
@@ -122,6 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#media
+MEDIA_URL='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 #ckeditor
 CKEDITOR_CONFIGS = {

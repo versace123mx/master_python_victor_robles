@@ -1,0 +1,32 @@
+{% extends 'layouts/layout.html' %}
+
+{%block title%}
+    {{title}}
+{%endblock%}
+
+{%block titular%}
+    <b>{{title}}</b>
+{%endblock%}
+
+{% block content %}
+    {% for articulo in articulos%}
+    <ul>
+        <li>ID: <b>{{ articulo.id }}</b></li>
+        <li>Content: <b>{{ articulo.contenct|safe }}</b></li>
+        <li>Public: <b>{{ articulo.public }}</b></li>
+        <li>Create_at: <b>{{ articulo.create_at }}</b></li>
+        <li>Update_at: <b>{{ articulo.update_at }}</b></li>
+        <li>Image: <b>{{ articulo.image }}</b></li>
+        <li>Title: <b>{{ articulo.title }}</b></li>
+        <li>User: <b>{{ articulo.user }}</b></li>
+        <li>Email: <b>{{ articulo.user.email }}</b></li><!--user biene de la relacion de articulos con user que en el modelo se creo la variable user que es el que los relaciona, si vemos como se creo el modelo-->
+        {% for categoria in articulo.categoris.all %} <!--aqui se hace articulo.categoris.all para traer todas las cateogiras a las que pertenece uun articulo y categoris biene del campo que se creo en el modelo que relaciona articulos con categorias-->
+            <li>{{categoria.name}}</li>
+        {%endfor%}
+        {% if articulo.image != 'null' and articulo.image.url|length >= 1%}
+        <li><img src='{{articulo.image.url}}' width="100"></li>
+        {%endif%}
+        <li><a href="#" class="btn btn-dark">Eliminar</a> </li>
+    </ul>
+    {%endfor%}
+{%endblock%}

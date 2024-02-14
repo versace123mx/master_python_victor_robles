@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from django.conf import settings
 #se quitaron las url de aqui, para colocarlas en cada una de las app's como lo hizo cesar cancino y como se recomienda hacerlo
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainapp.urls')),
     path('', include('pages.urls')),
+    path('', include('blog.urls')),
 ]
+
+
+#ruta imagenes
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
